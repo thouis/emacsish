@@ -4443,6 +4443,9 @@ extern bool profiler_memory_running;
 extern void malloc_probe (size_t);
 extern void syms_of_profiler (void);
 
+/* Defined in python.c */
+extern void syms_of_python (void);
+extern void init_python (void);
 
 #ifdef DOS_NT
 /* Defined in msdos.c, w32.c.  */

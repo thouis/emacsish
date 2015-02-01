@@ -5265,6 +5265,14 @@ ${MAKE-make} -s MAKEFILE_NAME=do-not-make-Makefile etc-emacsver || \
 AC_MSG_ERROR(['etc/refcards/emacsver.tex' could not be made.])
 ])
 
+dnl python checks (you can change the required python version bellow)
+AM_PATH_PYTHON(2.7.6)
+PY_PREFIX=`$PYTHON -c 'import sys ; print sys.prefix'`
+PYTHON_LIBS="-lpython$PYTHON_VERSION"
+PYTHON_CFLAGS="-I$PY_PREFIX/include/python$PYTHON_VERSION"
+AC_SUBST([PYTHON_LIBS])
+AC_SUBST([PYTHON_CFLAGS])
+
 AC_OUTPUT
 
 test "$MAKE" = make || AC_MSG_NOTICE([Now you can run '$MAKE'.])

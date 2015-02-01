@@ -1135,6 +1135,8 @@ Using an Emacs configured with --with-x-toolkit=lucid does not have this problem
 
   /* Perform basic initializations (not merely interning symbols).  */
 
+  init_python();
+
   if (!initialized)
     {
       init_alloc_once ();
@@ -1405,6 +1407,7 @@ Using an Emacs configured with --with-x-toolkit=lucid does not have this problem
       syms_of_marker ();
       syms_of_minibuf ();
       syms_of_process ();
+      syms_of_python ();
       syms_of_search ();
       syms_of_frame ();
       syms_of_syntax ();
